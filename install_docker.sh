@@ -12,9 +12,7 @@ apt remove -y --purge docker-ce
 apt install -y docker-ce=18.06.1~ce~3-0~raspbian
 apt-mark hold docker-ce
 usermod -aG docker pi
-reboot
 
 echo 'You need to reboot.'
-
 
 exit 0
