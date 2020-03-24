@@ -6,6 +6,8 @@ if [ $(whoami) != "root" ]; then
     exit 1
 fi
 
+apt install -y libltdl7
+
 wget https://download.docker.com/linux/debian/dists/buster/pool/stable/armhf/containerd.io_1.2.6-3_armhf.deb 
 
 #wget https://download.docker.com/linux/debian/dists/buster/pool/stable/armhf/docker-ce-cli_18.09.0~3-0~debian-buster_armhf.deb 
