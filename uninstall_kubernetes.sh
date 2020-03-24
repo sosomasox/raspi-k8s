@@ -8,7 +8,8 @@ fi
 
 
 if [ -f /etc/systemd/system/kubelet.service.d/10-kubeadm.conf ]; then
-    rm /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+    cp /etc/systemd/system/kubelet.service.d/10-kubeadm.conf.bk /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+    rm /etc/systemd/system/kubelet.service.d/10-kubeadm.conf.bk
 fi
 
 
