@@ -8,7 +8,6 @@ fi
 
 
 if [ -f /etc/systemd/system/kubelet.service.d/10-kubeadm.conf ]; then
-    cp /etc/systemd/system/kubelet.service.d/10-kubeadm.conf.bk /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
     rm /etc/systemd/system/kubelet.service.d/10-kubeadm.conf.bk
 fi
 
@@ -33,7 +32,7 @@ done < /etc/rc.local.bk
 
 
 apt-mark unhold kubeadm kubectl kubelet kubernetes-cni
-apt remove --purge -y kubelet=1.10.5-00 kubeadm=1.10.5-00 kubectl=1.10.5-00 kubernetes-cni=0.6.0-00
+apt remove --purge -y kubelet kubeadm kubectl kubernetes-cni
 rm /etc/apt/sources.list.d/kubernetes.list
 
 update-rc.d dphys-swapfile enable
@@ -41,5 +40,7 @@ dphys-swapfile install
 dphys-swapfile swapon
 systemctl enable dphys-swapfile
 
+echo
+echo 'Done.'
 
 exit 0
