@@ -1,7 +1,7 @@
 # ラズパイKubernetesシングルコントロールプレーンクラスターの構築
 
 ## 概要
-このリポジトリはRaspberry PiでKubernetesクラスターを構築するための手順とスクリプト群をまとめたものです。
+このリポジトリはRaspberry PiでKubernetesクラスターを構築するための手順とスクリプトをまとめたものです。
 
 <img src="./images/raspberrypi_kubernetes_cluster.jpg" width=60% alt="Raspberry Pi Kubernetes Cluster">
 
