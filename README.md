@@ -13,7 +13,7 @@
 - マスターノード用Raspberry Pi：1台
 - ワーカーノード用Raspberry Pi：1台以上
 - Raspberry Piがクラスターとして稼働するための最低限の周辺機器で構成されており、初期設定済みであること
-
+- SSHでRaspberry Pi上のpiユーザにログインできるできること
 
 
 
