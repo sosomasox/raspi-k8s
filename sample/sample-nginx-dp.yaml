@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: sample-nginx-dp
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+            app: nginx-dp
+    template:
+        metadata:
+            labels:
+                app: nginx-dp
+        spec:
+            containers:
+                - name: nginx
+                  image: nginx:1.15
+                  ports:
+                    - containerPort: 80
