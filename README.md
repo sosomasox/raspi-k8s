@@ -150,7 +150,7 @@ _**なお、マスターノードがRaspberry Pi 4 RAM 4GBの場合、ワーカ�
 
 >*$ cd Build_RasPi_Kubernetes_Cluster*  
 >*$ cd sample*  
->*$ kubectl apply -f ./sample-nginx-dp.yaml"*
+>*$ kubectl apply -f ./sample-nginx-dp.yaml*
 
 　以下は実行例です。  
 　\*この実行例ではreplicas数を調整しています。
