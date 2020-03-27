@@ -100,7 +100,7 @@ _**なお、マスターノードがRaspberry Pi 4 RAM 4GBの場合、ワーカ�
 
 >*$ cd Build_RasPi_Kubernetes_Cluster*  
 >*$ cd cni*  
->*$ kubectl apply -f ./kube-flannel-arm.yaml"*
+>*$ kubectl apply -f ./kube-flannel-arm.yaml*
 
 　マスターノードの設定は以上です。
 
