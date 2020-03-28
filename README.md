@@ -29,10 +29,10 @@ https://downloads.raspberrypi.org/raspbian/images/raspbian-2017-09-08/2017-09-07
 https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-07/2020-02-05-raspbian-buster.zip)
 
 
-_**\*ワーカーノードを9台以上にする場合、マスターノードにRaspberry Pi 3を使用するとメモリが足りなくなり、Kubernetesがうまく動作しなくなる可能性があります。**_  
+_**\* ワーカーノードを9台以上にする場合、マスターノードにRaspberry Pi 3を使用するとメモリが足りなくなり、Kubernetesがうまく動作しなくなる可能性があります。**_  
 _**9台以上のワーカーノードでクラスターを構築する場合にはマスターノードにRAMが2GBか4GBのRaspberry Pi 4を使用してください。**_
 
-_**\*マスターノードに2GB/4GB RAMのRaspberry Pi 4を使用した場合、現状(2020-03-27 JST)ではクラスターに参加できるワーカーノードの上限数は定かではありません。**_  
+_**\* マスターノードに2GB/4GB RAMのRaspberry Pi 4を使用した場合、現状(2020-03-27 JST)ではクラスターに参加できるワーカーノードの上限数は定かではありません。**_  
 _**なお、マスターノードがRaspberry Pi 4 RAM 4GBの場合、ワーカーノードが15台で構築されたクラスターの動作は確認しております。**_
 
 
@@ -81,6 +81,8 @@ DockerとKubernetesのインストールが完了したマスターノード上�
 マスターノードの初期化時に発行されるトークンの有効期限を無期限にするにはコマンドに _"--token-ttl=0"_ を追加して実行します。
 
 >*$ sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=${MASTER_NODE_IP_ADDRESS} --kubernetes-version v1.10.5 --ignore-preflight-errors=SystemVerification --token-ttl=0*
+
+_**\* ${MASTER_NODE_IP_ADDRESS}にはご自身のマスターノードのIPアドレスを記載してください**_
 
 以下は実行例です。
 
@@ -153,7 +155,7 @@ DockerとKubernetesのインストールが完了したマスターノード上�
 >*$ kubectl apply -f ./sample-nginx-dp.yaml*
 
 以下は実行例です。  
-\*この実行例ではreplicas数を調整しています。
+_**\* この実行例ではreplicas数を調整しています。**_
 
 <img src="./images/kubectl_get_pods.png" width=80% alt=""><br>
 
