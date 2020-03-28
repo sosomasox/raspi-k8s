@@ -29,8 +29,8 @@ https://downloads.raspberrypi.org/raspbian/images/raspbian-2017-09-08/2017-09-07
 https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-07/2020-02-05-raspbian-buster.zip)
 
 
-ワーカーノードを9台以上にする場合、マスターノードにRaspberry Pi 3を使用するとメモリが足りなくなり、Kubernetesがうまく動作しなくなる可能性があります。  
-9台以上のワーカーノードでクラスターを構築する場合にはマスターノードにRAMが2GBか4GBのRaspberry Pi 4を使用してください。
+_**\*ワーカーノードを9台以上にする場合、マスターノードにRaspberry Pi 3を使用するとメモリが足りなくなり、Kubernetesがうまく動作しなくなる可能性があります。**_  
+_**9台以上のワーカーノードでクラスターを構築する場合にはマスターノードにRAMが2GBか4GBのRaspberry Pi 4を使用してください。**_
 
 _**\*マスターノードに2GB/4GB RAMのRaspberry Pi 4を使用した場合、現状(2020-03-27 JST)ではクラスターに参加できるワーカーノードの上限数は定かではありません。**_  
 _**なお、マスターノードがRaspberry Pi 4 RAM 4GBの場合、ワーカーノードが15台で構築されたクラスターの動作は確認しております。**_
