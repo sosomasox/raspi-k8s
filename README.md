@@ -76,17 +76,23 @@ _**なお、マスターノードがRaspberry Pi 4 RAM 4GBの場合、ワーカ�
 ### マスターノードの設定
 DockerとKubernetesのインストールが完了したマスターノード上で下記のコマンドを実行し、クラスター構築の初期化を行います。
 
->*$ sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=${MASTER_NODE_IP_ADDRESS} --kubernetes-version v1.10.5　--ignore-preflight-errors=SystemVerification*
+```
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=${MASTER_NODE_IP_ADDRESS} --kubernetes-version v1.10.5　--ignore-preflight-errors=SystemVerification
+```
 
 マスターノードの初期化時に発行されるトークンの有効期限を無期限にするにはコマンドに _"--token-ttl=0"_ を追加して実行します。
 
->*$ sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=${MASTER_NODE_IP_ADDRESS} --kubernetes-version v1.10.5 --ignore-preflight-errors=SystemVerification --token-ttl=0*
+```bash
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=${MASTER_NODE_IP_ADDRESS} --kubernetes-version v1.10.5 --ignore-preflight-errors=SystemVerification --token-ttl=0
+```
 
 _**\* ${MASTER_NODE_IP_ADDRESS}にはご自身のマスターノードのIPアドレスを記載してください**_
 
 以下は実行例です。
 
->*$ sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.3.252 --kubernetes-version v1.10.5 --ignore-preflight-errors=SystemVerification --token-ttl=0*
+```
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.3.252 --kubernetes-version v1.10.5 --ignore-preflight-errors=SystemVerification --token-ttl=0
+```
 
 実行コマンドが成功すると以下のような結果が得られます。
 
@@ -94,15 +100,19 @@ _**\* ${MASTER_NODE_IP_ADDRESS}にはご自身のマスターノードのIPア�
 
 上記の結果をもとに以下のコマンドを実行し、クラスター構築の初期化を完了させます。
 
->*$ mkdir -p $HOME/.kube*  
->*$ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config*  
->*$ sudo chown $(id -u):$(id -g) $HOME/.kube/config*  
+```
+mkdir -p $HOME/.kube*  
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
 
 最後に、以下のコマンドを実行し、初期化したクラスターに対してネットワークプラグインの適用を行います。
 
->*$ cd Build_RasPi_Kubernetes_Cluster*  
->*$ cd cni*  
->*$ kubectl apply -f ./kube-flannel-arm.yaml*
+```
+cd Build_RasPi_Kubernetes_Cluster
+cd cni
+kubectl apply -f ./kube-flannel-arm.yaml
+```
 
 マスターノードの設定は以上です。
 
@@ -111,15 +121,21 @@ _**\* ${MASTER_NODE_IP_ADDRESS}にはご自身のマスターノードのIPア�
 ### ワーカーノードの設定
 クラスター構築におけるマスターノードの初期化時に得られた結果をもとにワーカーノードをクラスターに参加させます。  
 
->*$ sudo kubeadm join ${MASTER_NODE_IP_ADDRESS}:6443 --token ${TOKEN} --discovery-token-ca-cert-hash ${DISCOVERY_TOKEN_CA_CERT_HASH_SHA256} --ignore-preflight-errors=SystemVerification*
+```
+sudo kubeadm join ${MASTER_NODE_IP_ADDRESS}:6443 --token ${TOKEN} --discovery-token-ca-cert-hash ${DISCOVERY_TOKEN_CA_CERT_HASH_SHA256} --ignore-preflight-errors=SystemVerification
+```
 
 ワーカーノードがRaspberry Pi 4の場合は実行コマンドに _"--ignore-preflight-errors=CRI"_ を追加して実行する必要があります。
 
->*$ sudo kubeadm join ${MASTER_NODE_IP_ADDRESS}:6443 --token ${TOKEN} --discovery-token-ca-cert-hash ${DISCOVERY_TOKEN_CA_CERT_HASH_SHA256} --ignore-preflight-errors=SystemVerification --ignore-preflight-errors=CRI*
+```
+sudo kubeadm join ${MASTER_NODE_IP_ADDRESS}:6443 --token ${TOKEN} --discovery-token-ca-cert-hash ${DISCOVERY_TOKEN_CA_CERT_HASH_SHA256} --ignore-preflight-errors=SystemVerification --ignore-preflight-errors=CRI
+```
 
 以下は実行例です。
 
->*$ sudo kubeadm join 192.168.3.252:6443 --token 7j6n1c.op2bgtxhem0opf4j --discovery-token-ca-cert-hash sha256:5128b0b624d57a44e08ecb0dfbb27c10469d3055bbe0fec1274e740930e9f3d9 --ignore-preflight-errors=SystemVerification --ignore-preflight-errors=CRI*
+```
+sudo kubeadm join 192.168.3.252:6443 --token 7j6n1c.op2bgtxhem0opf4j --discovery-token-ca-cert-hash sha256:5128b0b624d57a44e08ecb0dfbb27c10469d3055bbe0fec1274e740930e9f3d9 --ignore-preflight-errors=SystemVerification --ignore-preflight-errors=CRI
+```
 
 クラスターへの参加が成功すると以下のような結果が得られます。
 
@@ -139,7 +155,9 @@ _**\* ${MASTER_NODE_IP_ADDRESS}にはご自身のマスターノードのIPア�
 ### ワーカーノードにおける稼働状況の確認
 マスターノードにて下記のコマンドを実行し、ワーカーノードがクラスター上で稼働しているか確認します。
 
->*kubectl get nodes -o wide*
+```
+kubectl get nodes -o wide
+```
 
 以下は実行例です。
 
@@ -150,9 +168,11 @@ _**\* ${MASTER_NODE_IP_ADDRESS}にはご自身のマスターノードのIPア�
 ### コンテナデプロイメントの検証
 マスターノード上で以下のコマンドを実行し、ワーカーノード上でnginxのコンテナを起動させます。
 
->*$ cd Build_RasPi_Kubernetes_Cluster*  
->*$ cd sample*  
->*$ kubectl apply -f ./sample-nginx-dp.yaml*
+```
+cd Build_RasPi_Kubernetes_Cluster
+cd sample
+kubectl apply -f ./sample-nginx-dp.yaml
+```
 
 以下は実行例です。  
 _**\* この実行例ではreplicas数を調整しています。**_
@@ -162,7 +182,9 @@ _**\* この実行例ではreplicas数を調整しています。**_
 上記の結果に記載されているIPアドレスに対してHTTPリクエストを送り、ワーカーノード上でnginxのサービスにが稼働しているか検証します。  
 以下は実行例と実行結果です。
 
->*$ curl 10.244.14.3*
+```
+curl 10.244.14.3
+```
 
 <img src="./images/curl.png" width=60% alt=""><br>
 
