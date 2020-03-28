@@ -72,10 +72,10 @@ _**なお、マスターノードがRaspberry Pi 4 RAM 4GBの場合、ワーカ�
 
 ### Dockerのインストール
 - ### Raspberry Pi 3の場合
-　[Raspberry Pi 3上にDockerをインストールする](https://github.com/izewfktvy533zjmn/Build_RasPi_Kubernetes_Cluster/wiki/Raspberry-Pi-3%E4%B8%8A%E3%81%ABDocker%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B)に従って、Dockerの動作環境を構築してください。
+　　[Raspberry Pi 3上にDockerをインストールする](https://github.com/izewfktvy533zjmn/Build_RasPi_Kubernetes_Cluster/wiki/Raspberry-Pi-3%E4%B8%8A%E3%81%ABDocker%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B)に従って、Dockerの動作環境を構築してください。
 
 - ### Raspberry Pi 4の場合
-　[Raspberry Pi 4上にDockerをインストールする](https://github.com/izewfktvy533zjmn/Build_RasPi_Kubernetes_Cluster/wiki/Raspberry-Pi-4%E4%B8%8A%E3%81%ABDocker%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B)に従って、Dockerの動作環境を構築してください。
+　　[Raspberry Pi 4上にDockerをインストールする](https://github.com/izewfktvy533zjmn/Build_RasPi_Kubernetes_Cluster/wiki/Raspberry-Pi-4%E4%B8%8A%E3%81%ABDocker%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B)に従って、Dockerの動作環境を構築してください。
 
 
 ### Kubernetesのインストール
