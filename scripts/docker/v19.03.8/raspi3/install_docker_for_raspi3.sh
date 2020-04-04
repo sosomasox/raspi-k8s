@@ -16,7 +16,7 @@ apt-mark unhold docker-ce docker-ce-cli containerd.io
 usermod -aG docker pi
 
 echo
-echo 'Done'
+echo 'Done.'
 echo 'You should reboot your Raspberry Pi.'
 
 exit 0
