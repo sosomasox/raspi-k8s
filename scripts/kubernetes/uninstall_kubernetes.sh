@@ -7,7 +7,7 @@ if [ $(whoami) != "root" ]; then
 fi
 
 
-if [ -f /etc/systemd/system/kubelet.service.d/10-kubeadm.conf ]; then
+if [ -f /etc/systemd/system/kubelet.service.d/10-kubeadm.conf.bk ]; then
     rm /etc/systemd/system/kubelet.service.d/10-kubeadm.conf.bk
 fi
 
