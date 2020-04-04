@@ -129,7 +129,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 cd Build_RasPi_Kubernetes_Cluster
 cd cni
-kubectl apply -f ./kube-flannel_v0.12.0-arm.yaml
+kubectl apply -f ./kube-flannel_v0.9.1-arm.yaml
 ```
 
 マスターノードの設定は以上です。
