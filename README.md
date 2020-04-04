@@ -37,11 +37,13 @@ _**なお、マスターノードがRaspberry Pi 4 RAM 4GBの場合、ワーカ�
 
 
 ## Docker
+- v18.06.3
 - v19.03.8
 
 
 ## Kubernetes
-- v10.15.0
+- v1.10.5
+- v1.13.5
 
 
 
@@ -84,24 +86,30 @@ _**なお、マスターノードがRaspberry Pi 4 RAM 4GBの場合、ワーカ�
 
 
 ## マスターノードの設定
-DockerとKubernetesのインストールが完了したマスターノード上で下記のコマンドを実行し、クラスター構築の初期化を行います。
+_**\* 注意**_  
+_**Kubernetes v1.13.5とDocker v18.06.3をインストールしたマスターノードに以下の設定を行ったところうまく動作しませんでした。**_  
+_**Kubernetes v1.13.5をマスターノードで使用する場合には、Docker v19.03.8を使用することを推奨します。**_  
+_**なお、この組み合わせの場合、うまく動作することを確認しております。**_  
+
+DockerとKubernetesのインストールが完了したマスターノード上で下記のコマンドを実行し、クラスター構築の初期化を行います。  
 
 ```
-sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=${MASTER_NODE_IP_ADDRESS} --kubernetes-version v1.10.5　--ignore-preflight-errors=SystemVerification
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=${MASTER_NODE_IP_ADDRESS} --kubernetes-version=${KUBERNETES_VERSION}　--ignore-preflight-errors=SystemVerification
 ```
 
 マスターノードの初期化時に発行されるトークンの有効期限を無期限にするにはコマンドに _"--token-ttl=0"_ を追加して実行します。
 
-```bash
-sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=${MASTER_NODE_IP_ADDRESS} --kubernetes-version v1.10.5 --ignore-preflight-errors=SystemVerification --token-ttl=0
+```
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=${MASTER_NODE_IP_ADDRESS} --kubernetes-version=${KUBERNETES_VERSION} --ignore-preflight-errors=SystemVerification --token-ttl=0
 ```
 
-_**\* ${MASTER_NODE_IP_ADDRESS}にはご自身のマスターノードのIPアドレスを記載してください**_
+_**\* ${MASTER_NODE_IP_ADDRESS} にはご自身のマスターノードのIPアドレスを記載してください**_  
+_**\* ${KUBERNETES_VERSION} にはインストールしたKubernetesnoバージョンを記載してください**_
 
 以下は実行例です。
 
 ```
-sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.3.252 --kubernetes-version v1.10.5 --ignore-preflight-errors=SystemVerification --token-ttl=0
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.3.251 --kubernetes-version=v1.13.5 --ignore-preflight-errors=SystemVerification --token-ttl=0
 ```
 
 実行コマンドが成功すると以下のような結果が得られます。
@@ -121,7 +129,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 cd Build_RasPi_Kubernetes_Cluster
 cd cni
-kubectl apply -f ./kube-flannel-arm.yaml
+kubectl apply -f ./kube-flannel_v0.12.0-arm.yaml
 ```
 
 マスターノードの設定は以上です。
@@ -135,16 +143,10 @@ kubectl apply -f ./kube-flannel-arm.yaml
 sudo kubeadm join ${MASTER_NODE_IP_ADDRESS}:6443 --token ${TOKEN} --discovery-token-ca-cert-hash ${DISCOVERY_TOKEN_CA_CERT_HASH_SHA256} --ignore-preflight-errors=SystemVerification
 ```
 
-ワーカーノードがRaspberry Pi 4の場合は実行コマンドに _"--ignore-preflight-errors=CRI"_ を追加して実行する必要があります。
-
-```
-sudo kubeadm join ${MASTER_NODE_IP_ADDRESS}:6443 --token ${TOKEN} --discovery-token-ca-cert-hash ${DISCOVERY_TOKEN_CA_CERT_HASH_SHA256} --ignore-preflight-errors=SystemVerification --ignore-preflight-errors=CRI
-```
-
 以下は実行例です。
 
 ```
-sudo kubeadm join 192.168.3.252:6443 --token 7j6n1c.op2bgtxhem0opf4j --discovery-token-ca-cert-hash sha256:5128b0b624d57a44e08ecb0dfbb27c10469d3055bbe0fec1274e740930e9f3d9 --ignore-preflight-errors=SystemVerification --ignore-preflight-errors=CRI
+sudo kubeadm join 192.168.3.251:6443 --token 7j6n1c.op2bgtxhem0opf4j --discovery-token-ca-cert-hash sha256:5128b0b624d57a44e08ecb0dfbb27c10469d3055bbe0fec1274e740930e9f3d9 --ignore-preflight-errors=SystemVerification
 ```
 
 クラスターへの参加が成功すると以下のような結果が得られます。

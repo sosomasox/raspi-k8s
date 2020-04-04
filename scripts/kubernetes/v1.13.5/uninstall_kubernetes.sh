@@ -7,11 +7,6 @@ if [ $(whoami) != "root" ]; then
 fi
 
 
-if [ -f /etc/systemd/system/kubelet.service.d/10-kubeadm.conf ]; then
-    rm /etc/systemd/system/kubelet.service.d/10-kubeadm.conf.bk
-fi
-
-
 if [ -f /etc/rc.local ]; then
     cp /etc/rc.local /etc/rc.local.bk
     rm -f /etc/rc.local
