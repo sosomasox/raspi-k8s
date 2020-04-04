@@ -9,8 +9,8 @@ fi
 
 
 rm /etc/apt/sources.list.d/docker.list
-apt-mark unhold docker-ce docker-ce-cli containerd.io
-apt remove --purge -y docker-ce docker-ce-cli containerd.io
+apt-mark unhold docker-ce
+apt remove --purge -y docker-ce
 
 usermod -G "" pi
 
