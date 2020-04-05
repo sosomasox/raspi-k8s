@@ -11,7 +11,7 @@ fi
 curl -sSL https://get.docker.com | sh
 apt remove --purge -y docker-ce docker-ce-cli containerd.io
 apt install -y docker-ce=5:19.03.8~3-0~raspbian-stretch
-apt-mark unhold docker-ce docker-ce-cli containerd.io
+apt-mark hold docker-ce docker-ce-cli containerd.io
 
 usermod -aG docker pi
 
