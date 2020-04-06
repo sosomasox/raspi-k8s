@@ -119,7 +119,7 @@ sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address
 上記の結果をもとに以下のコマンドを実行し、クラスター構築の初期化を完了させます。
 
 ```
-mkdir -p $HOME/.kube*  
+mkdir -p $HOME/.kube  
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
