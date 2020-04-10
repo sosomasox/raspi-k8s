@@ -24,7 +24,7 @@
 https://downloads.raspberrypi.org/raspbian/images/raspbian-2017-09-08/2017-09-07-raspbian-stretch.zip)
 
 
-- Raspberry Pi 4 Model B  
+- Raspberry Pi 4 Model B
   - [2020-02-05-raspbian-buster.img](
 https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-07/2020-02-05-raspbian-buster.zip)
 
