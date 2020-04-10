@@ -1,6 +1,6 @@
 # ラズパイKubernetesシングルコントロールプレーンクラスターの構築
 
-# 概要
+## 概要
 このリポジトリはRaspberry PiでKubernetesクラスターを構築するための手順とDockerとKuberentesをインストール/アンインストールするためのスクリプトをまとめたものです。
 
 <img src="./images/kubernetes_cluster_on_raspberrypi.jpg" width=100% alt="Kubernetes Cluster on Raspberry Pi">
@@ -9,7 +9,7 @@
 
 
 
-# 要求
+## 要求
 - マスターノード用Raspberry Pi：1台
 - ワーカーノード用Raspberry Pi：1台以上
 - Raspberry Piがクラスターとして稼働するための最低限の周辺機器で構成されており、初期設定済みであること
@@ -17,7 +17,7 @@
 
 
 
-# サポート
+## サポート
 ## Raspberry Pi
 - Raspberry Pi 3 Model B　　
   - [2017-09-07-raspbian-stretch.img](
@@ -49,7 +49,7 @@ _**なお、マスターノードがRaspberry Pi 4 RAM 4GBの場合、ワーカ�
 
 
 
-# Kubernetesクラスターの構築方法
+## Kubernetesクラスターの構築方法
 
 ## オプション設定
 下記の項目はオプションです。  
@@ -159,7 +159,7 @@ sudo kubeadm join 192.168.3.251:6443 --token 7j6n1c.op2bgtxhem0opf4j --discovery
 
 
 
-# Kubernetesクラスターの動作検証方法
+## Kubernetesクラスターの動作検証方法
 ここでは、[Kubernetesクラスターの構築方法](#Kubernetesクラスターの構築方法)に従って構築したクラスターの動作検証を行います。
 
 
