@@ -91,6 +91,15 @@ _**Kubernetes v1.13.5とDocker v18.06.3をインストールしたマスター�
 _**Kubernetes v1.13.5をマスターノードで使用する場合には、Docker v19.03.8を使用することを推奨します。**_  
 _**なお、この組み合わせの場合、うまく動作することを確認しております。**_  
 
+
+
+### iptablesにおけるnftablesバックエンドの使用停止
+マスターノードにRaspbian Busterを用いたRaspberry Pi 4を使用している場合、iptablesはバックエンドにてnftablesを使用しています。  
+現在のkubeadmではnftablesと互換性がないため、iptablesをレガシーモードに切り替える必要があります。  
+[公式ドキュメント](https://kubernetes.io/ja/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#iptables%E3%81%8Cnftables%E3%83%90%E3%83%83%E3%82%AF%E3%82%A8%E3%83%B3%E3%83%89%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B)に従って、設定を行って下さい。  
+
+
+### クラスター構築の初期化
 DockerとKubernetesのインストールが完了したマスターノード上で下記のコマンドを実行し、クラスター構築の初期化を行います。  
 
 ```
