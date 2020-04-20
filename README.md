@@ -57,7 +57,7 @@ _**なお、マスターノードがRaspberry Pi 4 RAM 4GBの場合、ワーカ�
 しかし、下記の設定を適用することでクラスターのパフォーマンスを上げることができます。
 
 ### GPUメモリ使用量の最小化
-[ラズパイのGPUメモリの使用量を最小化させる](https://github.com/izewfktvy533zjmn/Build_RasPi_Kubernetes_Cluster/wiki/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4%E3%81%AEGPU%E3%83%A1%E3%83%A2%E3%83%AA%E3%81%AE%E4%BD%BF%E7%94%A8%E9%87%8F%E3%82%92%E6%9C%80%E5%B0%8F%E5%8C%96%E3%81%95%E3%81%9B%E3%82%8B)を適用するとGPUメモリの使用量を最小化することができます。
+[ラズパイのGPUメモリの使用量を最小化させる](https://github.com/izewfktvy533zjmn/raspi-k8s/wiki/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4%E3%81%AEGPU%E3%83%A1%E3%83%A2%E3%83%AA%E3%81%AE%E4%BD%BF%E7%94%A8%E9%87%8F%E3%82%92%E6%9C%80%E5%B0%8F%E5%8C%96%E3%81%95%E3%81%9B%E3%82%8B)を適用するとGPUメモリの使用量を最小化することができます。
 
 ### 内蔵Wi-FiとBluetoothの機能の無効化
 [ラズパイの内蔵Wi-FiとBluetoothの機能を無効化する](https://github.com/izewfktvy533zjmn/Build_RasPi_K8s_Cluster/wiki/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4%E3%81%AE%E5%86%85%E8%94%B5Wi-Fi%E3%81%A8Bluetooth%E3%81%AE%E6%A9%9F%E8%83%BD%E3%82%92%E7%84%A1%E5%8A%B9%E5%8C%96%E3%81%99%E3%82%8B)を適用すると
@@ -69,19 +69,19 @@ _**なお、マスターノードがRaspberry Pi 4 RAM 4GBの場合、ワーカ�
 下記の項目はマスターノード、ワーカーノード、共通の設定です。
 
 ### cgroupsの有効化
-[ラズパイ上でDockerを動作させるためにcgroupsを有効化する](https://github.com/izewfktvy533zjmn/Build_RasPi_Kubernetes_Cluster/wiki/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4%E4%B8%8A%E3%81%A7Docker%E3%82%92%E5%8B%95%E4%BD%9C%E3%81%95%E3%81%9B%E3%82%8B%E3%81%9F%E3%82%81%E3%81%ABcgroups%E3%82%92%E6%9C%89%E5%8A%B9%E5%8C%96%E3%81%99%E3%82%8B)に従って、ラズパイ上でDockerを動作させるために必要な設定を行ってください。
+[ラズパイ上でDockerを動作させるためにcgroupsを有効化する](https://github.com/izewfktvy533zjmn/raspi-k8s/wiki/%E3%83%A9%E3%82%BA%E3%83%91%E3%82%A4%E4%B8%8A%E3%81%A7Docker%E3%82%92%E5%8B%95%E4%BD%9C%E3%81%95%E3%81%9B%E3%82%8B%E3%81%9F%E3%82%81%E3%81%ABcgroups%E3%82%92%E6%9C%89%E5%8A%B9%E5%8C%96%E3%81%99%E3%82%8B)に従って、ラズパイ上でDockerを動作させるために必要な設定を行ってください。
 
 
 ### Dockerのインストール
 - ### Raspberry Pi 3の場合
-　　[Raspberry Pi 3上にDockerをインストールする](https://github.com/izewfktvy533zjmn/Build_RasPi_Kubernetes_Cluster/wiki/Raspberry-Pi-3%E4%B8%8A%E3%81%ABDocker%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B)に従って、Dockerの動作環境を構築してください。
+　　[Raspberry Pi 3上にDockerをインストールする](https://github.com/izewfktvy533zjmn/raspi-k8s/wiki/Raspberry-Pi-3%E4%B8%8A%E3%81%ABDocker%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B)に従って、Dockerの動作環境を構築してください。
 
 - ### Raspberry Pi 4の場合
-　　[Raspberry Pi 4上にDockerをインストールする](https://github.com/izewfktvy533zjmn/Build_RasPi_Kubernetes_Cluster/wiki/Raspberry-Pi-4%E4%B8%8A%E3%81%ABDocker%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B)に従って、Dockerの動作環境を構築してください。
+　　[Raspberry Pi 4上にDockerをインストールする](https://github.com/izewfktvy533zjmn/raspi-k8s/wiki/Raspberry-Pi-4%E4%B8%8A%E3%81%ABDocker%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B)に従って、Dockerの動作環境を構築してください。
 
 
 ### Kubernetesのインストール
-　[Raspberry Pi上にKubernetesをインストールする](https://github.com/izewfktvy533zjmn/Build_RasPi_Kubernetes_Cluster/wiki/Raspberry-Pi%E4%B8%8A%E3%81%ABKubernetes%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B)に従って、Kubernetesの動作環境を構築してください。
+　[Raspberry Pi上にKubernetesをインストールする](https://github.com/izewfktvy533zjmn/raspi-k8s/wiki/Raspberry-Pi%E4%B8%8A%E3%81%ABKubernetes%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B)に従って、Kubernetesの動作環境を構築してください。
 
 
 
@@ -127,7 +127,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 最後に、以下のコマンドを実行し、初期化したクラスターに対してネットワークプラグインの適用を行います。
 
 ```
-cd Build_RasPi_Kubernetes_Cluster
+cd raspi-k8s
 cd cni
 kubectl apply -f ./kube-flannel_v0.12.0-arm.yaml
 ```
@@ -181,7 +181,7 @@ kubectl get nodes -o wide
 マスターノード上で以下のコマンドを実行し、ワーカーノード上でnginxのコンテナを起動させます。
 
 ```
-cd Build_RasPi_Kubernetes_Cluster
+cd raspi-k8s
 cd sample
 kubectl apply -f ./sample-nginx-dp.yaml
 ```
