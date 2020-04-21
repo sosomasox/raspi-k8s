@@ -27,6 +27,7 @@ https://downloads.raspberrypi.org/raspbian/images/raspbian-2017-09-08/)
 - Raspberry Pi 4 Model B
   - [2020-02-05-raspbian-buster.img](
 https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-07/)
+  - [ubuntu-18.04.4-preinstalled-server-arm64+raspi3.img](https://ubuntu.com/download/raspberry-pi)
 
 
 _**\* ワーカーノードを10台以上にする場合、マスターノードにRaspberry Pi 3を使用するとメモリが足りなくなり、Kubernetesがうまく動作しなくなる可能性があります**_  
