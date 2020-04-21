@@ -21,12 +21,12 @@
 ## Raspberry Pi
 - Raspberry Pi 3 Model B　　
   - [2017-09-07-raspbian-stretch.img](
-https://downloads.raspberrypi.org/raspbian/images/raspbian-2017-09-08/2017-09-07-raspbian-stretch.zip)
+https://downloads.raspberrypi.org/raspbian/images/raspbian-2017-09-08/)
 
 
 - Raspberry Pi 4 Model B
   - [2020-02-05-raspbian-buster.img](
-https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-07/2020-02-05-raspbian-buster.zip)
+https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-07/)
 
 
 _**\* ワーカーノードを10台以上にする場合、マスターノードにRaspberry Pi 3を使用するとメモリが足りなくなり、Kubernetesがうまく動作しなくなる可能性があります**_  
