@@ -5,7 +5,9 @@
 
 <img src="./images/kubernetes_cluster_on_raspberrypi.jpg" width=100% alt="Kubernetes Cluster on Raspberry Pi">
 
-### 2020年4月21日　Ubuntu 18.04への対応
+
+
+## 2020年4月21日　Ubuntu 18.04への対応
 [Ubuntu 18.04 arm64版OS](https://ubuntu.com/download/raspberry-pi)を搭載したRaspberry Pi ４上で動作することを確認しました。
 
 &nbsp;
