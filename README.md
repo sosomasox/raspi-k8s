@@ -42,6 +42,7 @@ https://downloads.raspberrypi.org/raspbian/images/raspbian-2017-09-08/)
 https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-07/)
   - [ubuntu-18.04.4-preinstalled-server-arm64+raspi3.img](https://ubuntu.com/download/raspberry-pi)
 
+&nbsp;
 
 _**\* ワーカーノードを10台以上にする場合、マスターノードにRaspberry Pi 3を使用するとメモリが足りなくなり、Kubernetesがうまく動作しなくなる可能性があります**_  
 _**10台以上のワーカーノードでクラスターを構築する場合にはマスターノードにRAMが2GBか4GBのRaspberry Pi 4を使用してください**_
@@ -49,10 +50,14 @@ _**10台以上のワーカーノードでクラスターを構築する場合に
 _**\* マスターノードに2GB/4GB RAMのRaspberry Pi 4を使用した場合、現状(2020-03-27 JST)ではクラスターに参加できるワーカーノードの上限数は定かではありません**_  
 _**なお、マスターノードがRaspberry Pi 4 RAM 4GBの場合、ワーカーノードが15台で構築されたクラスターの動作は確認しております**_
 
+&nbsp;
+
 
 ### Docker
 - v18.06.3
 - v19.03.8
+
+&nbsp;
 
 
 ### Kubernetes
