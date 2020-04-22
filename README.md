@@ -5,6 +5,8 @@
 
 <img src="./images/kubernetes_cluster_on_raspberrypi.jpg" width=100% alt="Kubernetes Cluster on Raspberry Pi">
 
+&nbsp;
+
 
 
 ## 2020年4月21日　Ubuntu 18.04への対応
