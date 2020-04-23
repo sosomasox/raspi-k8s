@@ -12,7 +12,7 @@ curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key 
 echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
 apt update
-apt install -y kubelet=1.13.5-00 kubeadm=1.13.5-00 kubectl=1.13.5-00 kubernetes-cni=0.7.5-00
+apt install -y kubelet=1.17.4-00 kubeadm=1.17.4-00 kubectl=1.17.4-00 kubernetes-cni=0.7.5-00
 
 
 systemctl daemon-reload
