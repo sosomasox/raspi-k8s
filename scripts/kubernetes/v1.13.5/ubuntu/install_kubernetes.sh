@@ -19,27 +19,6 @@ systemctl daemon-reload
 systemctl restart kubelet.service
 apt-mark hold kubeadm kubectl kubelet kubernetes-cni
 
-
-if [ -f /etc/rc.local ]; then
-    cp /etc/rc.local /etc/rc.local.bk
-    rm -f /etc/rc.local
-fi
-
-
-touch /etc/rc.local
-chmod 755 /etc/rc.local
-
-
-while read line
-do
-    if [ "$line" = "exit 0" ]; then
-        echo "systemctl daemon-reload" >> /etc/rc.local
-        echo >> /etc/rc.local
-    fi
-    
-    echo $line >> /etc/rc.local
-done < /etc/rc.local.bk
-
 echo
 echo 'Done.'
 
