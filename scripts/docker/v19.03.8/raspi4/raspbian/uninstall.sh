@@ -15,8 +15,8 @@ dpkg -P docker-ce-cli
 apt remove --purge -y libltdl7
 
 
-if [ -e ./downloads/containerd.io_1.2.13-1_armhf.deb  ] ;then
-    rm ./downloads/containerd.io_1.2.13-1_armhf.deb
+if [ -e ./downloads/containerd.io_1.2.6-3_armhf.deb  ] ;then
+    rm ./downloads/containerd.io_1.2.6-3_armhf.deb
 fi
 
 
