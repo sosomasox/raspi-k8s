@@ -10,7 +10,7 @@
 
 
 ## 2020年4月21日　Ubuntu 18.04への対応
-[Ubuntu 18.04 arm64版OS](https://ubuntu.com/download/raspberry-pi)を搭載したRaspberry Pi ４上で動作することを確認しました。
+[Ubuntu 18.04 arm64版OS](http://cdimage.ubuntu.com/releases/18.04/release/)を搭載したRaspberry Pi ４上で動作することを確認しました。
 
 &nbsp;
 
@@ -49,7 +49,7 @@
 ### Raspberry Pi 4
 #### OS
 - [Raspbian Buster](https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-07/)
-- [Ubuntu 18.04 arm64](https://ubuntu.com/download/raspberry-pi)
+- [Ubuntu 18.04 arm64](http://cdimage.ubuntu.com/releases/18.04/release/)
 
 
 #### Docker
