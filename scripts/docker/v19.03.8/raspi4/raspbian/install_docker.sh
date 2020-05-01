@@ -16,8 +16,8 @@ if [ ! -e ./downloads ] ;then
 fi
 
 
-if [ ! -e ./downloads/containerd.io_1.2.13-1_armhf.deb  ] ;then
-    wget -P ./downloads https://download.docker.com/linux/debian/dists/buster/pool/stable/armhf/containerd.io_1.2.13-1_armhf.deb
+if [ ! -e ./downloads/containerd.io_1.2.6-3_armhf.deb ] ;then
+    wget -P ./downloads https://download.docker.com/linux/debian/dists/buster/pool/stable/armhf/containerd.io_1.2.6-3_armhf.deb
 fi
 
 
@@ -31,7 +31,7 @@ if [ ! -e ./downloads/docker-ce_19.03.8~3-0~debian-buster_armhf.deb ] ;then
 fi
 
 
-dpkg -i ./downloads/containerd.io_1.2.13-1_armhf.deb
+dpkg -i ./downloads/containerd.io_1.2.6-3_armhf.deb
 dpkg -i ./downloads/docker-ce-cli_19.03.8~3-0~debian-buster_armhf.deb 
 dpkg -i ./downloads/docker-ce_19.03.8~3-0~debian-buster_armhf.deb
 
