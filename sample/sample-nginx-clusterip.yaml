@@ -1,16 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: nginx-cluster
+    name: nginx-clusterip
 spec:
     type: ClusterIP
     externalIPs:
         - 192.168.3.254
     ports:
-        - name: "http-port"
-    ports:
-        - name: "http-port"
-          protocol: "TCP"
+        - protocol: TCP
           port: 80
           targetPort: 80
     selector:
