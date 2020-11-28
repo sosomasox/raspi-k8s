@@ -16,7 +16,7 @@ if [ ! -e ./downloads ] ;then
 fi
 
 
-if [ ! -e ./downloads/ containerd.io_1.2.6-3_arm64.deb ] ;then
+if [ ! -e ./downloads/containerd.io_1.2.6-3_arm64.deb ] ;then
     wget -P ./downloads https://download.docker.com/linux/debian/dists/buster/pool/stable/arm64/containerd.io_1.2.6-3_arm64.deb
 fi
 
