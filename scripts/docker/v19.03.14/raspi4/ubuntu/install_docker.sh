@@ -17,8 +17,8 @@ add-apt-repository \
 apt update
 apt -y install docker-ce=5:19.03.14~3-0~ubuntu-focal \
                         docker-ce-cli=5:19.03.14~3-0~ubuntu-focal \
-                        containerd.io=1.2.13-2
-apt-mark hold docker-ce docker-ce-cli containerd
+                        containerd.io=1.3.9-1
+apt-mark hold docker-ce docker-ce-cli containerd.io
 
 usermod -aG docker ubuntu
 
